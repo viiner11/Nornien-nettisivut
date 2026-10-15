@@ -26,7 +26,8 @@ header {
 }
 
 #logo-text {
-    font-size: 50px;
+    font-size: 65px;
+    font-family: times new roman;
     margin-bottom: 30px;
     color: #ffffff;
     text-shadow: 0 0 20px rgb(128, 0, 255);
@@ -57,7 +58,7 @@ nav ul li a {
     display: inline-block;
     text-decoration: none;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     padding: 15px;
     border-radius: 15px;
@@ -74,7 +75,7 @@ nav ul li a span {
 
 nav ul li a:hover {
     color: #0a0a0a;
-    background-color: #8cd6fb77;
+    background-color: #4ce4ffb4;
     box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
 
@@ -85,7 +86,98 @@ nav ul li a:hover span {
 /**********
    Section Styles
 ***********/
-
 section {
     text-align: center;
+}
+
+#tervetuloa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#tervetuloa h2{
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgb(128, 0, 255);
+}
+
+#tervetuloa p {
+    font-size: 23px;
+    margin-top: 20px;
+
+    margin-bottom: 60px;
+    max-width: 500px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#ajankohtaista {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgb(128, 0, 255);
+}
+
+#ajankohtaista h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgb(128, 0, 255);
+}
+
+.kortit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.kortti {
+    background-color: #2f0042;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    width: 270px;
+    padding: 20px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    list-style: none;
+}
+
+#liity-jaseneksi {
+    font-size: 35px;
+    text-shadow: 0 0 20px rgb(128, 0, 255);
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+
+#liity-jaseneksi-p {
+    font-size: 23px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#liity-jaseneksi-section a {
+    display: inline-block;
+    text-decoration: underline;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 15px;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#liity-jaseneksi-section a:hover {
+    color: #0a0a0a;
+    background-color: #4ce4ffb4;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
