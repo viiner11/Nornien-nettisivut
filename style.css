@@ -344,7 +344,71 @@ footer {
     transform: scale(1.12);
 }
 
+/*******
+    Kurssit-sivun alaotsikot
+********/
 
+.sivu-alaotsikko {
+    font-size: 30px;
+    line-height: 1.3;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: var(--valkoinen);
+    text-shadow: 0 0 20px var(--violetti-hehku);
+    overflow-wrap: anywhere;
+}
+
+.sk-kortti {
+    width: 270px;
+    max-width: 100%;
+    padding: 20px;
+    background-color: var(--kortti-tausta);
+    color: var(--valkoinen);
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--neon-varjo);
+    overflow-wrap: anywhere;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.sk-kortti strong {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.sk-kortti p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+    color: var(--valkoinen);
+}
+
+.kv-kortti {
+    width: 270px;
+    max-width: 100%;
+    padding: 20px;
+    background-color: var(--kortti-tausta);
+    color: var(--valkoinen);
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--neon-varjo);
+    overflow-wrap: anywhere;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.kv-kortti strong {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.kv-kortti p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+    color: var(--valkoinen);
+}
 /* =================================
    TABLETIT
 ================================= */
@@ -572,5 +636,103 @@ footer {
 
     .somet {
         gap: 12px;
+    }
+}
+
+
+/* =================================
+   LISÄKORJAUKSET PUHELIMILLE
+   Myös kurssi- ja muut erikoiskortit
+================================= */
+
+/* Kaikki korttityypit pysyvät ruudun sisällä */
+.kortti,
+.sk-kortti,
+.kv-kortti {
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* Tabletit: erikoiskortit asettuvat rinnakkain,
+   jos niiden ympärillä on flex- tai grid-asettelu */
+@media (max-width: 768px) {
+    .sk-kortti,
+    .kv-kortti {
+        width: calc(50% - 10px);
+        min-width: 0;
+        max-width: 100%;
+        padding: 18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sk-kortti strong,
+    .sk-kortti p,
+    .kv-kortti strong,
+    .kv-kortti p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    /* Pitkät linkit tai sanat eivät levennä sivua */
+    main a,
+    main p,
+    main li,
+    main strong {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Puhelimet: kortit allekkain ja koko käytettävissä oleva leveys */
+@media (max-width: 480px) {
+    .sk-kortti,
+    .kv-kortti {
+        width: 100%;
+        min-width: 0;
+        max-width: 400px;
+        padding: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 12px;
+    }
+
+    .sk-kortti strong,
+    .sk-kortti p,
+    .kv-kortti strong,
+    .kv-kortti p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Varmistaa, etteivät leveät elementit aiheuta sivuttaisvieritystä */
+    main,
+    section,
+    .kortit {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    nav ul li a {
+        text-align: center;
+    }
+
+    footer p {
+        line-height: 1.6;
+    }
+}
+
+/* Erittäin kapeat puhelimet */
+@media (max-width: 350px) {
+    .sk-kortti,
+    .kv-kortti {
+        padding: 12px;
+    }
+
+    .sk-kortti strong,
+    .sk-kortti p,
+    .kv-kortti strong,
+    .kv-kortti p {
+        font-size: 15px;
     }
 }
