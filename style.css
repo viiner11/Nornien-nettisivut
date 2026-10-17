@@ -1,63 +1,102 @@
+
+/* =================================
+   PERUSASETUKSET
+================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     color: #ffffff;
     background-color: #17013a;
+    line-height: 1.5;
 }
 
-/**********
-   Header and Navigation Styles
-***********/
+img {
+    max-width: 100%;
+}
+
+/* Yhteiset värit ja hehkutukset */
+
+:root {
+    --tausta: #17013a;
+    --violetti: #2f0042;
+    --sininen: #000053;
+    --kortti-tausta: #060061;
+    --neon: #4ce4ffb4;
+    --neon-varjo: rgba(0, 255, 255, 0.5);
+    --violetti-hehku: rgb(128, 0, 255);
+    --valkoinen: #ffffff;
+}
+
+
+/* =================================
+   HEADER JA LOGO
+================================= */
+
 header {
-    background-image: linear-gradient(135deg, #000053, #2f0042, #8e01d4);
+    background-image: linear-gradient(
+        135deg,
+        var(--sininen),
+        var(--violetti),
+        #8e01d4
+    );
     padding: 10px;
     text-align: center;
-    padding-bottom: 10px;
-}
-
-#logo-text {
-    font-size: 65px;
-    font-family: times new roman;
-    margin-bottom: 30px;
-    color: #ffffff;
-    text-shadow: 0 0 20px rgb(128, 0, 255);
 }
 
 #logo {
+    display: block;
     width: 120px;
+    height: auto;
+    margin: 0 auto;
 }
+
+#logo-text {
+    font-family: "Times New Roman", serif;
+    font-size: 65px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--valkoinen);
+    text-shadow: 0 0 20px var(--violetti-hehku);
+    overflow-wrap: anywhere;
+}
+
+
+/* =================================
+   NAVIGAATIO
+================================= */
 
 nav {
     display: flex;
     justify-content: center;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
 }
 
 nav ul li a {
     display: inline-block;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--valkoinen);
     font-size: 20px;
     font-weight: bold;
     padding: 15px;
@@ -75,20 +114,59 @@ nav ul li a span {
 
 nav ul li a:hover {
     color: #0a0a0a;
-    background-color: #4ce4ffb4;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    background-color: var(--neon);
+    box-shadow: 0 0 10px var(--neon-varjo);
 }
 
 nav ul li a:hover span {
-    transform: scale(1.15);
+    transform: scale(1.08);
 }
 
-/**********
-   Section Styles
-***********/
+
+/* =================================
+   YHTEISET OSIOT
+================================= */
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 section {
     text-align: center;
+    margin-bottom: 40px;
 }
+
+/* Kaikkien sivujen osio-otsikot */
+
+.sivu-otsikko,
+main section > h2 {
+    font-size: 35px;
+    line-height: 1.25;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: var(--valkoinen);
+    text-shadow: 0 0 20px var(--violetti-hehku);
+    overflow-wrap: anywhere;
+}
+
+/* Yhteinen tekstityyli */
+
+.sivu-teksti {
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--valkoinen);
+    overflow-wrap: anywhere;
+}
+
+
+/* =================================
+   TERVETULOA
+================================= */
 
 #tervetuloa {
     display: flex;
@@ -97,85 +175,115 @@ section {
     justify-content: center;
     text-align: center;
 }
-#tervetuloa h2{
-    font-size: 35px;
+
+#tervetuloa h2 {
     margin-top: 20px;
-    margin-bottom: 20px;
-    color: #ffffff;
-    text-shadow: 0 0 20px rgb(128, 0, 255);
 }
 
 #tervetuloa p {
-    font-size: 23px;
-    margin-top: 20px;
-
-    margin-bottom: 60px;
     max-width: 500px;
-    text-align: center;
-    color: #ffffff;
+    margin: 20px auto 60px;
+    font-size: 23px;
+    line-height: 1.6;
+    color: var(--valkoinen);
 }
 
-#ajankohtaista {
-    font-size: 25px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #ffffff;
-    text-shadow: 0 0 20px rgb(128, 0, 255);
-}
 
-#ajankohtaista h2 {
-    font-size: 35px;
-    margin-bottom: 20px;
-    color: #ffffff;
-    text-shadow: 0 0 20px rgb(128, 0, 255);
-}
+/* =================================
+   KORTIT
+   Samat tyylit kaikilla sivuilla
+================================= */
 
 .kortit {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch;
     gap: 25px;
+    width: 100%;
     padding: 20px;
-    margin-top: 40px;
+    margin: 30px auto 0;
+    list-style: none;
 }
 
 .kortti {
-    background-color: #060061;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 270px;
+    max-width: 100%;
     padding: 20px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    list-style: none;
+    background-color: var(--kortti-tausta);
+    color: var(--valkoinen);
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--neon-varjo);
+    overflow-wrap: anywhere;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.kortti strong {
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 .kortti p {
     font-size: 20px;
+    line-height: 1.5;
     margin-top: 15px;
-    color: #ffffff;
+    color: var(--valkoinen);
 }
 
-#liity-jaseneksi {
+@media (hover: hover) {
+    .kortti:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 18px var(--neon-varjo);
+    }
+}
+
+
+/* =================================
+   JÄSENEKSI LIITTYMINEN
+================================= */
+
+#liity-jaseneksi-section {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+#liity-jaseneksi,
+.jaseneksi-otsikko {
     font-size: 35px;
-    text-shadow: 0 0 20px rgb(128, 0, 255);
-    margin-top: 150px;
+    line-height: 1.3;
+    margin-top: 30px;
     margin-bottom: 20px;
+    color: var(--valkoinen);
+    text-shadow: 0 0 20px var(--violetti-hehku);
+    overflow-wrap: anywhere;
 }
 
-#liity-jaseneksi-p {
+#liity-jaseneksi-p,
+.jaseneksi-teksti {
+    max-width: 700px;
+    margin: 20px auto;
     font-size: 23px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    line-height: 1.6;
+    color: var(--valkoinen);
+    overflow-wrap: anywhere;
 }
 
 #liity-jaseneksi-section a {
     display: inline-block;
-    text-decoration: underline;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
+    max-width: 100%;
     padding: 15px;
     border-radius: 15px;
+    color: var(--valkoinen);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
     transition:
         color 0.25s ease,
         background-color 0.25s ease,
@@ -184,66 +292,80 @@ section {
 
 #liity-jaseneksi-section a:hover {
     color: #0a0a0a;
-    background-color: #4ce4ffb4;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    background-color: var(--neon);
+    box-shadow: 0 0 10px var(--neon-varjo);
 }
 
-/**********
-   Footer Styles
-***********/
+
+/* =================================
+   FOOTER JA SOME
+================================= */
+
 footer {
-    background-image: linear-gradient(135deg,  #8e01d4, #2f0042,  #000053);
+    background-image: linear-gradient(
+        135deg,
+        #8e01d4,
+        var(--violetti),
+        var(--sininen)
+    );
     padding: 20px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 14px;
     margin-top: 40px;
+    text-align: center;
+    color: var(--valkoinen);
+    font-size: 14px;
+    overflow-wrap: anywhere;
 }
 
 .somet {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 20px;
-    margin-top: 10px;
-    margin-bottom: 25px;
+    margin: 10px auto 25px;
 }
 
-.somet a {
-    color: #ffffff;
+.somet a,
+.some {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--valkoinen);
     text-decoration: none;
     font-size: 35px;
-    transition: color 0.25s ease, transform 0.25s ease;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-/**********
-   Responsive Styles – puhelimet ja tabletit
-***********/
+.somet a:hover,
+.some:hover {
+    color: var(--neon);
+    transform: scale(1.12);
+}
 
-/* Tabletit ja pienemmät näytöt */
+
+/* =================================
+   TABLETIT
+================================= */
+
 @media (max-width: 768px) {
 
-    /* Logo ja otsikko */
     #logo-text {
         font-size: clamp(35px, 8vw, 50px);
-        margin-bottom: 20px;
-        overflow-wrap: anywhere;
+        margin-bottom: 15px;
     }
 
     #logo {
         width: 90px;
-        max-width: 100%;
-        height: auto;
     }
 
-    /* Navigaatio */
     nav {
         padding: 5px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
         gap: 5px;
     }
 
@@ -253,40 +375,32 @@ footer {
         border-radius: 12px;
     }
 
-    /* Yleiset osiot */
-    section {
-        padding-left: 15px;
-        padding-right: 15px;
+    main {
+        padding: 0 15px;
     }
 
-    /* Tervetuloa-osio */
-    #tervetuloa h2 {
+    section {
+        margin-bottom: 30px;
+    }
+
+    .sivu-otsikko,
+    main section > h2 {
         font-size: 28px;
-        margin-top: 15px;
+        margin-top: 20px;
         margin-bottom: 15px;
+    }
+
+    .sivu-teksti {
+        font-size: 18px;
+        line-height: 1.6;
     }
 
     #tervetuloa p {
-        font-size: 18px;
-        line-height: 1.6;
         max-width: 100%;
-        margin-top: 10px;
+        font-size: 18px;
         margin-bottom: 35px;
     }
 
-    /* Ajankohtaista */
-    #ajankohtaista {
-        font-size: 20px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-
-    #ajankohtaista h2 {
-        font-size: 28px;
-        margin-bottom: 15px;
-    }
-
-    /* Kortit */
     .kortit {
         gap: 20px;
         padding: 10px;
@@ -294,62 +408,61 @@ footer {
     }
 
     .kortti {
-        width: 100%;
-        max-width: 400px;
+        width: calc(50% - 10px);
+        min-width: 220px;
         padding: 18px;
     }
 
+    .kortti strong,
     .kortti p {
         font-size: 17px;
-        line-height: 1.5;
     }
 
-    /* Jäseneksi liittyminen */
-    #liity-jaseneksi {
+    #liity-jaseneksi,
+    .jaseneksi-otsikko {
         font-size: 28px;
-        margin-top: 70px;
-        margin-bottom: 15px;
-        overflow-wrap: anywhere;
     }
 
-    #liity-jaseneksi-p {
+    #liity-jaseneksi-p,
+    .jaseneksi-teksti {
         font-size: 18px;
-        line-height: 1.6;
-        margin-top: 15px;
-        margin-bottom: 15px;
+    }
+
+    #liity-jaseneksi-section {
+        margin-top: 50px;
     }
 
     #liity-jaseneksi-section a {
         font-size: 17px;
         padding: 12px;
-        overflow-wrap: anywhere;
     }
 
-    /* Footer */
     footer {
         padding: 20px 15px;
         font-size: 13px;
-        overflow-wrap: anywhere;
     }
 
     .somet {
-        flex-wrap: wrap;
         gap: 18px;
         margin-bottom: 15px;
     }
 
-    .somet a {
-        font-size: 26px;
+    .somet a,
+    .some {
+        font-size: 28px;
     }
 }
 
 
-/* Pienet puhelimet */
+/* =================================
+   PUHELIMET
+================================= */
+
 @media (max-width: 480px) {
 
     #logo-text {
-        font-size: 34px;
-        margin-bottom: 15px;
+        font-size: clamp(30px, 8vw, 36px);
+        margin-bottom: 12px;
     }
 
     #logo {
@@ -365,18 +478,23 @@ footer {
         padding: 9px 10px;
     }
 
-    #tervetuloa h2,
-    #ajankohtaista h2 {
+    main {
+        padding: 0 12px;
+    }
+
+    .sivu-otsikko,
+    main section > h2 {
         font-size: 24px;
+    }
+
+    .sivu-teksti {
+        font-size: 16px;
     }
 
     #tervetuloa p {
         font-size: 16px;
+        margin-top: 10px;
         margin-bottom: 30px;
-    }
-
-    #ajankohtaista {
-        font-size: 18px;
     }
 
     .kortit {
@@ -385,32 +503,74 @@ footer {
     }
 
     .kortti {
+        width: 100%;
+        min-width: 0;
+        max-width: 400px;
         padding: 15px;
         border-radius: 12px;
     }
 
+    .kortti strong,
     .kortti p {
         font-size: 16px;
     }
 
-    #liity-jaseneksi {
+    #liity-jaseneksi,
+    .jaseneksi-otsikko {
         font-size: 25px;
-        margin-top: 50px;
+        margin-top: 20px;
     }
 
-    #liity-jaseneksi-p {
+    #liity-jaseneksi-p,
+    .jaseneksi-teksti {
         font-size: 16px;
+    }
+
+    #liity-jaseneksi-section {
+        margin-top: 35px;
+        margin-bottom: 40px;
     }
 
     #liity-jaseneksi-section a {
         font-size: 16px;
+        padding: 12px;
+    }
+
+    footer {
+        padding: 18px 12px;
     }
 
     .somet {
         gap: 15px;
     }
 
-    .somet a {
-        font-size: 24px;
+    .somet a,
+    .some {
+        font-size: 25px;
+    }
+}
+
+
+/* =================================
+   KAPEAT PUHELIMET
+================================= */
+
+@media (max-width: 350px) {
+
+    #logo-text {
+        font-size: 28px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .kortti {
+        padding: 12px;
+    }
+
+    .somet {
+        gap: 12px;
     }
 }
