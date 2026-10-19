@@ -289,6 +289,7 @@ main section > h2 {
     color: var(--valkoinen);
     font-size: 20px;
     font-weight: bold;
+    box-shadow: 0 0 10px var(--neon-varjo);
     text-decoration: underline;
     overflow-wrap: anywhere;
     transition:
@@ -415,6 +416,19 @@ footer {
     line-height: 1.5;
     margin-top: 15px;
     color: var(--valkoinen);
+}
+
+.sivu-teksti a {
+    color: var(--neon);
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+    transition:
+        color 0.25s ease,
+        text-decoration 0.25s ease;
+}
+
+.sivu-teksti{
+    font-size: 22px;
 }
 /* =================================
    TABLETIT
