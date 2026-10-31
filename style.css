@@ -117,7 +117,7 @@ Navigaatio
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 4px; /* Muuta tätä säätääksesi väliä */
+    gap: 10px; /* Muuta tätä säätääksesi väliä */
 
     color: var(--valkoinen);
     font-family: 'Times New Roman', Times, serif;
