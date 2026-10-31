@@ -3,75 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" href="img/logo.webp" type="image/webp">
-     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet"
+    <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <title>Nornien kotisivu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="icon" href="img/logo.webp" type="image/webp">
+    <title>Tapahtumat | Nornat Ry</title>
 </head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <body>
     <header>
-        <img src="img/logo.webp" alt="Nornien logo" class="logo" id="logo">
-        <h1 class="logo" id="logo-text">Nornat Ry</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html"><span>Koti</span></a></li>
-                <li><a href="tapahtumat.html"><span>Tapahtumat</span></a></li>
-                <li><a href="kurssit.html"><span>Kurssit</span></a></li>
-                <li><a href="kauppa.html"><span>Kauppa</span></a></li>
-                <li><a href="tietoja.html"><span>Tietoja</span></a></li>
-                <li><a href="yhteystiedot.html"><span>Yhteystiedot</span></a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="kotisivu.html"><img src="img/logo.webp" alt="Nornat Ry" class="img-fluid" id="navbarLogo"></a>
+                <a class="navbar-brand" href="kotisivu.html">Nornat Ry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="kotisivu.html">Etusivu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kauppa.html">Kauppa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tapahtumat.html">Tapahtumat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kurssit.html">Kurssit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tietoja.html">Tietoja</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <!-- Kuvakkeita varten käytetty Font Awesome -kirjasto. Lisätietoja ja kuvakkeiden haku:
-     https://fontawesome.com/search?ic=free-collection
-    -->
-
     <main>
-        <section id="tapahtumat">
-    <h2 class="sivu-otsikko">Tapahtumat</h2>
+         <section class="container kurssit">
+            <div class="row g-4">
+                <h3 class="text-center">Tapahtumat</h3>
+                <div class="col-13 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/syyskurssit.jpeg" class="card-img-top" alt="Syyskurssit">
+                        <div class="card-body">
+                            <h5 class="card-title">Syyskurssit:</h5>
+                            <p class="card-text">
+                                1.9.2027 – 30.11.2027</p>
+                            <a href="kurssit.html">Lue lisää</a>
+                        </div>
+                    </div>
+                </div>
 
-    <ul class="kortit">
+                <div class="col-13 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/vuosikokous.jpeg" class="card-img-top" alt="Yhdistyksen vuosikokous">
+                        <div class="card-body">
+                            <h5 class="card-title">Yhdistyksen vuosikokous:</h5>
+                            <p class="card-text">
+                                10.10.2027 klo 17:00
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        <li class="kortti">
-            <strong>Syyskurssit:</strong>
-            <p>1.9.2027 – 30.11.2027</p>
-        </li>
+                <div class="col-13 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/talvijuhlat.jpeg" class="card-img-top" alt="Talvijuhlat">
+                        <div class="card-body">
+                            <h5 class="card-title">Talvijuhlat:</h5>
+                            <p class="card-text">
+                                21.12.2027 klo 18:00
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        <li class="kortti">
-            <strong>Yhdistyksen vuosikokous:</strong>
-            <p>10.10.2027 klo 17:00</p>
-        </li>
+                <div class="col-13 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/kevätkurssit.jpeg" class="card-img-top" alt="Kevätkurssit">
+                        <div class="card-body">
+                            <h5 class="card-title">Kevätkurssit:</h5>
+                            <p class="card-text">
+                               6.3.2028 – 21.5.2028
+                            </p>
+                            <a href="kurssit.html">Lue lisää</a>
+                        </div>
+                    </div>
+                </div>
 
-        <li class="kortti">
-            <strong>Talvijuhlat:</strong>
-            <p>21.12.2027 klo 18:00</p>
-        </li>
+                <div class="col-13 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/kesäjuhlat.jpeg" class="card-img-top" alt="Kesäjuhlat">
+                        <div class="card-body">
+                            <h5 class="card-title">Kesäjuhlat:</h5>
+                            <p class="card-text">
+                                20.6.2028 klo 20:00
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        <li class="kortti">
-            <strong>Kevätkurssit:</strong>
-            <p>6.3.2028 – 21.5.2028</p>
-        </li>
+            </div>
 
-        <li class="kortti">
-            <strong>Kesäjuhlat:</strong>
-            <p>20.6.2028 klo 20:00</p>
-        </li>
+        </section>
 
-    </ul>
-</section>
-
-        <section id="liity-jaseneksi-section">
-            <h2 id="liity-jaseneksi">Liity jäseneksi</h2>
-            <p id="liity-jaseneksi-p">Haluatko liittyä Nornien jäseneksi? Täytä liittymislomake ja liity mukaan toimintaamme!</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaYj1YGCUKrlkqoxNt3mVAhqM5DCxTwmaYAABrLBtysIFqhw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Liity jäseneksi</a>
+        <section class="container liity">
+            <h3 class="text-center">Liity jäseneksi</h3>
+            <p class="lead text-center">Haluatko liittyä Nornat Ry:n jäseneksi? Täytä jäsenhakemus ja liity mukaan toimintaamme!</p>
+            <div class="text-center ">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaYj1YGCUKrlkqoxNt3mVAhqM5DCxTwmaYAABrLBtysIFqhw/viewform?usp=dialog" target="_blank">Liity nyt</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <div class="somet">
+        <section class="container somet">
             <a href="#" target="_blank" rel="noopener noreferrer" class="some"><i class="fa-brands fa-square-facebook"></i></a>
             <a href="#" target="_blank" rel="noopener noreferrer" class="some"><i class="fa-brands fa-square-instagram"></i></a>
             <a href="#" target="_blank" rel="noopener noreferrer" class="some"><i class="fa-brands fa-square-twitter"></i></a>
@@ -81,8 +133,10 @@
             <a href="#" target="_blank" rel="noopener noreferrer" class="some"><i class="fa-brands fa-tiktok"></i></a>
             <a href="#" target="_blank" rel="noopener noreferrer" class="some"><i class="fa-brands fa-square-snapchat"></i></a>
             <a href="#" target="_blank" rel="noopener noreferrer" class="some"><i class="fa-brands fa-square-reddit"></i></a>
+        </section>
+        <div class="text-center p-3">
+            &copy; 2014 Nornat Ry. Kaikki oikeudet pidätetään.
         </div>
-        <p>&copy; 2014 Nornat Ry. Kaikki oikeudet pidätetään.</p>
     </footer>
 </body>
 </html>

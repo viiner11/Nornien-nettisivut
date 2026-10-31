@@ -1,35 +1,6 @@
-
-/* =================================
-   PERUSASETUKSET
-================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    min-height: 100vh;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    background-color: #17013a;
-    line-height: 1.5;
-
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-img {
-    max-width: 100%;
-}
-
-/* Yhteiset värit ja hehkutukset */
+/*=============
+Esivamistelu
+=============*/
 
 :root {
     --tausta: #17013a;
@@ -42,718 +13,247 @@ img {
     --valkoinen: #ffffff;
 }
 
-
-/* =================================
-   HEADER JA LOGO
-================================= */
-
-header {
-    background-image: linear-gradient(
-        135deg,
-        var(--sininen),
-        var(--violetti),
-        #8e01d4
-    );
-    padding: 10px;
-    text-align: center;
+* {
+    font-family: arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
-#logo {
-    display: block;
-    width: 120px;
-    height: auto;
-    margin: 0 auto;
-}
-
-#logo-text {
-    font-family: "Times New Roman", serif;
-    font-size: 65px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: var(--valkoinen);
-    text-shadow: 0 0 20px var(--violetti-hehku);
-    overflow-wrap: anywhere;
-}
-
-
-/* =================================
-   NAVIGAATIO
-================================= */
-
-nav {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    list-style: none;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    background-color: var(--tausta);
 }
 
-nav ul li a {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--valkoinen);
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px;
-    border-radius: 15px;
-    transition:
-        color 0.25s ease,
-        background-color 0.25s ease,
-        box-shadow 0.25s ease;
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-nav ul li a span {
-    display: inline-block;
-    transition: transform 0.25s ease;
-}
-
-nav ul li a:hover {
-    color: #0a0a0a;
-    background-color: var(--neon);
-    box-shadow: 0 0 10px var(--neon-varjo);
-}
-
-nav ul li a:hover span {
-    transform: scale(1.08);
-}
-
-
-/* =================================
-   YHTEISET OSIOT
-================================= */
-
-main {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-
+main{
     flex: 1;
 }
 
-section {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/* Kaikkien sivujen osio-otsikot */
-
-.sivu-otsikko,
-main section > h2 {
-    font-size: 35px;
-    line-height: 1.25;
-    margin-top: 30px;
-    margin-bottom: 20px;
+.kurssit h3 {
     color: var(--valkoinen);
-    text-shadow: 0 0 20px var(--violetti-hehku);
-    overflow-wrap: anywhere;
-}
-
-/* Yhteinen tekstityyli */
-
-.sivu-teksti {
-    max-width: 700px;
-    margin: 20px auto;
-    font-size: 20px;
-    line-height: 1.7;
-    color: var(--valkoinen);
-    overflow-wrap: anywhere;
-}
-
-
-/* =================================
-   TERVETULOA
-================================= */
-
-#tervetuloa {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#tervetuloa h2 {
-    margin-top: 20px;
-}
-
-#tervetuloa p {
-    max-width: 500px;
-    margin: 20px auto 60px;
-    font-size: 23px;
-    line-height: 1.6;
-    color: var(--valkoinen);
-}
-
-
-/* =================================
-   KORTIT
-   Samat tyylit kaikilla sivuilla
-================================= */
-
-.kortit {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 25px;
-    width: 100%;
-    padding: 20px;
-    margin: 30px auto 0;
-    list-style: none;
-}
-
-.kortti {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 270px;
-    max-width: 100%;
-    padding: 20px;
-    background-color: var(--kortti-tausta);
-    color: var(--valkoinen);
-    border-radius: 15px;
-    box-shadow: 0 0 10px var(--neon-varjo);
-    overflow-wrap: anywhere;
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.kortti strong {
-    font-size: 20px;
-    line-height: 1.5;
-}
-
-.kortti p {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-top: 15px;
-    color: var(--valkoinen);
-}
-
-@media (hover: hover) {
-    .kortti:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 18px var(--neon-varjo);
-    }
-}
-
-
-/* =================================
-   JÄSENEKSI LIITTYMINEN
-================================= */
-
-#liity-jaseneksi-section {
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 60px;
-}
-
-#liity-jaseneksi,
-.jaseneksi-otsikko {
-    font-size: 35px;
-    line-height: 1.3;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    color: var(--valkoinen);
-    text-shadow: 0 0 20px var(--violetti-hehku);
-    overflow-wrap: anywhere;
-}
-
-#liity-jaseneksi-p,
-.jaseneksi-teksti {
-    max-width: 700px;
-    margin: 20px auto;
-    font-size: 23px;
-    line-height: 1.6;
-    color: var(--valkoinen);
-    overflow-wrap: anywhere;
-}
-
-#liity-jaseneksi-section a {
-    display: inline-block;
-    max-width: 100%;
-    padding: 15px;
-    border-radius: 15px;
-    color: var(--valkoinen);
-    font-size: 20px;
     font-weight: bold;
-    box-shadow: 0 0 10px var(--neon-varjo);
-    text-decoration: underline;
-    overflow-wrap: anywhere;
-    transition:
-        color 0.25s ease,
-        background-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-#liity-jaseneksi-section a:hover {
-    color: #0a0a0a;
-    background-color: var(--neon);
-    box-shadow: 0 0 10px var(--neon-varjo);
-}
-
-
-/* =================================
-   FOOTER JA SOME
-================================= */
-
-footer {
-    background-image: linear-gradient(
-        135deg,
-        #8e01d4,
-        var(--violetti),
-        var(--sininen)
-    );
-    padding: 20px;
-    margin-top: 40px;
-    text-align: center;
-    color: var(--valkoinen);
-    font-size: 14px;
-    overflow-wrap: anywhere;
-}
-
-.somet {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 10px auto 25px;
-}
-
-.somet a,
-.some {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--valkoinen);
-    text-decoration: none;
-    font-size: 35px;
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.somet a:hover,
-.some:hover {
-    color: var(--neon);
-    transform: scale(1.12);
-}
-
-/*******
-    Kurssit-sivun alaotsikot
-********/
-
-.sivu-alaotsikko {
     font-size: 30px;
-    line-height: 1.3;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    color: var(--valkoinen);
     text-shadow: 0 0 20px var(--violetti-hehku);
-    overflow-wrap: anywhere;
+    margin-top: 50px;
 }
 
-.sk-kortti {
-    width: 270px;
-    max-width: 100%;
-    padding: 20px;
-    background-color: var(--kortti-tausta);
+/*=============
+Index sivu
+=============*/
+
+.ikuva{
+    max-height: 100px;
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.index h1 {
     color: var(--valkoinen);
-    border-radius: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 45px; ;
+    text-shadow: 0 0 20px var(--violetti-hehku);
+    text-align: center;
+}
+
+.index p{
+    color: var(--valkoinen);
+    text-align: center;
+}
+
+.index a{
+    color: var(--valkoinen);
+    font-weight: bold;
+    padding: 7px;
+    background-color: var(--neon);
+    border-radius: 7px;
     box-shadow: 0 0 10px var(--neon-varjo);
-    overflow-wrap: anywhere;
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
 }
 
-.sk-kortti strong {
-    font-size: 20px;
-    line-height: 1.5;
-}
-
-.sk-kortti p {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-top: 15px;
-    color: var(--valkoinen);
-}
-
-.kv-kortti {
-    width: 270px;
-    max-width: 100%;
-    padding: 20px;
-    background-color: var(--kortti-tausta);
-    color: var(--valkoinen);
-    border-radius: 15px;
-    box-shadow: 0 0 10px var(--neon-varjo);
-    overflow-wrap: anywhere;
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.kv-kortti strong {
-    font-size: 20px;
-    line-height: 1.5;
-}
-
-.kv-kortti p {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-top: 15px;
-    color: var(--valkoinen);
-}
-
-.sivu-teksti a {
+.index a:hover{
     color: var(--neon);
-    text-decoration: underline;
-    overflow-wrap: anywhere;
-    transition:
-        color 0.25s ease,
-        text-decoration 0.25s ease;
+    font-weight: bold;
+    padding: 7px;
+    background-color: var(--violetti);
+    border-radius: 7px;
+    box-shadow: 0 0 10px var(--violetti-hehku);
+}
+/*=============
+Navigaatio
+=============*/
+
+#navbarLogo {
+    max-height: 90px;
+    margin-right: 0px;
 }
 
-.sivu-teksti{
-    font-size: 22px;
-}
-/* =================================
-   TABLETIT
-================================= */
-
-@media (max-width: 768px) {
-
-    #logo-text {
-        font-size: clamp(35px, 8vw, 50px);
-        margin-bottom: 15px;
-    }
-
-    #logo {
-        width: 90px;
-    }
-
-    nav {
-        padding: 5px;
-        margin-bottom: 10px;
-    }
-
-    nav ul {
-        gap: 5px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-        padding: 10px;
-        border-radius: 12px;
-    }
-
-    main {
-        padding: 0 15px;
-    }
-
-    section {
-        margin-bottom: 30px;
-    }
-
-    .sivu-otsikko,
-    main section > h2 {
-        font-size: 28px;
-        margin-top: 20px;
-        margin-bottom: 15px;
-    }
-
-    .sivu-teksti {
-        font-size: 18px;
-        line-height: 1.6;
-    }
-
-    #tervetuloa p {
-        max-width: 100%;
-        font-size: 18px;
-        margin-bottom: 35px;
-    }
-
-    .kortit {
-        gap: 20px;
-        padding: 10px;
-        margin-top: 25px;
-    }
-
-    .kortti {
-        width: calc(50% - 10px);
-        min-width: 220px;
-        padding: 18px;
-    }
-
-    .kortti strong,
-    .kortti p {
-        font-size: 17px;
-    }
-
-    #liity-jaseneksi,
-    .jaseneksi-otsikko {
-        font-size: 28px;
-    }
-
-    #liity-jaseneksi-p,
-    .jaseneksi-teksti {
-        font-size: 18px;
-    }
-
-    #liity-jaseneksi-section {
-        margin-top: 50px;
-    }
-
-    #liity-jaseneksi-section a {
-        font-size: 17px;
-        padding: 12px;
-    }
-
-    footer {
-        padding: 20px 15px;
-        font-size: 13px;
-    }
-
-    .somet {
-        gap: 18px;
-        margin-bottom: 15px;
-    }
-
-    .somet a,
-    .some {
-        font-size: 28px;
-    }
+.navbar {
+    background-image: linear-gradient(135deg, var(--sininen), var(--violetti), var(--violetti-hehku));
 }
 
-
-/* =================================
-   PUHELIMET
-================================= */
-
-@media (max-width: 480px) {
-
-    #logo-text {
-        font-size: clamp(30px, 8vw, 36px);
-        margin-bottom: 12px;
-    }
-
-    #logo {
-        width: 75px;
-    }
-
-    nav ul {
-        gap: 4px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-        padding: 9px 10px;
-    }
-
-    main {
-        padding: 0 12px;
-    }
-
-    .sivu-otsikko,
-    main section > h2 {
-        font-size: 24px;
-    }
-
-    .sivu-teksti {
-        font-size: 16px;
-    }
-
-    #tervetuloa p {
-        font-size: 16px;
-        margin-top: 10px;
-        margin-bottom: 30px;
-    }
-
-    .kortit {
-        padding: 5px;
-        gap: 15px;
-    }
-
-    .kortti {
-        width: 100%;
-        min-width: 0;
-        max-width: 400px;
-        padding: 15px;
-        border-radius: 12px;
-    }
-
-    .kortti strong,
-    .kortti p {
-        font-size: 16px;
-    }
-
-    #liity-jaseneksi,
-    .jaseneksi-otsikko {
-        font-size: 25px;
-        margin-top: 20px;
-    }
-
-    #liity-jaseneksi-p,
-    .jaseneksi-teksti {
-        font-size: 16px;
-    }
-
-    #liity-jaseneksi-section {
-        margin-top: 35px;
-        margin-bottom: 40px;
-    }
-
-    #liity-jaseneksi-section a {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    footer {
-        padding: 18px 12px;
-    }
-
-    .somet {
-        gap: 15px;
-    }
-
-    .somet a,
-    .some {
-        font-size: 25px;
-    }
+.navbar-brand {
+    color: var(--valkoinen);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 45px; ;
+    text-shadow: 0 0 20px var(--violetti-hehku);
 }
 
-
-/* =================================
-   KAPEAT PUHELIMET
-================================= */
-
-@media (max-width: 350px) {
-
-    #logo-text {
-        font-size: 28px;
-    }
-
-    nav ul li a {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    .kortti {
-        padding: 12px;
-    }
-
-    .somet {
-        gap: 12px;
-    }
+.navbar-toggler {
+    border-color: var(--valkoinen);
+    size: 30px;
 }
 
-
-/* =================================
-   LISÄKORJAUKSET PUHELIMILLE
-   Myös kurssi- ja muut erikoiskortit
-================================= */
-
-/* Kaikki korttityypit pysyvät ruudun sisällä */
-.kortti,
-.sk-kortti,
-.kv-kortti {
-    box-sizing: border-box;
-    overflow-wrap: anywhere;
-    word-break: normal;
+.navbar-brand:hover {
+    color: var(--valkoinen);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Tabletit: erikoiskortit asettuvat rinnakkain,
-   jos niiden ympärillä on flex- tai grid-asettelu */
-@media (max-width: 768px) {
-    .sk-kortti,
-    .kv-kortti {
-        width: calc(50% - 10px);
-        min-width: 0;
-        max-width: 100%;
-        padding: 18px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .sk-kortti strong,
-    .sk-kortti p,
-    .kv-kortti strong,
-    .kv-kortti p {
-        font-size: 17px;
-        line-height: 1.5;
-    }
-
-    /* Pitkät linkit tai sanat eivät levennä sivua */
-    main a,
-    main p,
-    main li,
-    main strong {
-        overflow-wrap: anywhere;
-    }
+.nav-link {
+    color: var(--valkoinen);
+    font-size: 20px;
+    text-shadow: 0 0 10px var(--violetti-hehku);
+    
 }
 
-/* Puhelimet: kortit allekkain ja koko käytettävissä oleva leveys */
-@media (max-width: 480px) {
-    .sk-kortti,
-    .kv-kortti {
-        width: 100%;
-        min-width: 0;
-        max-width: 400px;
-        padding: 15px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 12px;
-    }
-
-    .sk-kortti strong,
-    .sk-kortti p,
-    .kv-kortti strong,
-    .kv-kortti p {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    /* Varmistaa, etteivät leveät elementit aiheuta sivuttaisvieritystä */
-    main,
-    section,
-    .kortit {
-        min-width: 0;
-        max-width: 100%;
-    }
-
-    nav ul li a {
-        text-align: center;
-    }
-
-    footer p {
-        line-height: 1.6;
-    }
+.navbar-nav {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Erittäin kapeat puhelimet */
-@media (max-width: 350px) {
-    .sk-kortti,
-    .kv-kortti {
-        padding: 12px;
-    }
+.navbar-nav :hover{
+    color: var(--neon-varjo);
+    font-weight: bold;
+}
 
-    .sk-kortti strong,
-    .sk-kortti p,
-    .kv-kortti strong,
-    .kv-kortti p {
-        font-size: 15px;
-    }
+/*=============
+Esittely
+=============*/
+.esittely h1 {
+    color: var(--valkoinen);
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 0 0 20px var(--violetti-hehku);
+}
+.esittely p {
+    color: var(--valkoinen);
+    font-size: 17px;
+}
+
+/*=============
+Ajankohtaista
+=============*/
+
+.card {
+    background-color: var(--kortti-tausta);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--violetti-hehku);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    color: var(--valkoinen);
+    font-size: 16px;
+    height: 100%;
+}
+.card-title {
+    color: var(--valkoinen);
+    font-weight: bold;
+    font-size: 25px;
+    text-shadow: 0 0 20px var(--violetti-hehku);    
+}
+
+.ajankohtaista a {
+    color: var(--white);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+/*=============
+Liity jäseneksi
+=============*/
+
+.liity h3 {
+    color: var(--valkoinen);
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 0 0 20px var(--violetti-hehku);
+    margin-top: 50px;
+}
+
+.liity p {
+    color: var(--valkoinen);
+    font-size: 17px;
+}
+
+.liity a {
+    color: var(--valkoinen);
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+    
+}
+
+.liity a:hover{
+    color: var(--neon);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+    
+}
+
+/*=============
+Footer
+=============*/
+footer {
+    background-image: linear-gradient(135deg,var(--violetti-hehku), var(--violetti),  var(--sininen));
+    color: var(--valkoinen);
+    padding: 15px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.somet{
+    color: var(--valkoinen);
+    font-size: 20px;
+}
+
+.some {
+    color: var(--valkoinen);
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+/*=============
+Tietojaa
+=============*/
+
+#tietoja h2 {
+    color: var(--valkoinen);
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 0 0 20px var(--violetti-hehku);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#tietoja p{
+    color: var(--valkoinen);
+    text-align: center;
+}
+
+#tietoja a{
+    color: var(--valkoinen);
+    text-align: center;
 }
