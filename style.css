@@ -98,12 +98,59 @@ Navigaatio
     background-image: linear-gradient(135deg, var(--sininen), var(--violetti), var(--violetti-hehku));
 }
 
+#navbarLogo {
+    max-height: 90px;
+}
+
+.navbar {
+    background-image: linear-gradient(
+        135deg,
+        var(--sininen),
+        var(--violetti),
+        var(--violetti-hehku)
+    );
+}
+
+.navbar span{
+    font-family: 'Times New Roman', Times, serif;
+}
 .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Muuta tätä säätääksesi väliä */
+
     color: var(--valkoinen);
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    font-size: 45px; ;
+    font-size: 40px;
     text-shadow: 0 0 20px var(--violetti-hehku);
+}
+
+.navbar-brand:hover {
+    color: var(--valkoinen);
+}
+
+.navbar-toggler {
+    border-color: var(--valkoinen);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.nav-link {
+    color: var(--valkoinen);
+    font-size: 20px;
+    text-shadow: 0 0 10px var(--violetti-hehku);
+}
+
+.navbar-nav {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--neon-varjo);
+    font-weight: bold;
 }
 
 .navbar-toggler {
