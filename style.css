@@ -305,3 +305,52 @@ Tietojaa
     color: var(--valkoinen);
     text-align: center;
 }
+
+/*=============
+Kauppa
+=============*/
+
+.kauppa h3 {
+    color: var(--valkoinen);
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 0 0 20px var(--violetti-hehku);
+    margin-top: 50px;
+}
+
+.kauppa p {
+    color: var(--valkoinen);
+    font-size: 17px;
+}
+
+.kauppa a {
+    color: var(--valkoinen);
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+    
+}
+
+.kauppa .card {
+    background-color: var(--kortti-tausta);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--violetti-hehku);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    color: var(--valkoinen);
+    font-size: 16px;
+    height: 100%;
+}
+
+.kauppa .card-title {
+    color: var(--valkoinen);
+    font-weight: bold;
+    font-size: 25px;
+    text-shadow: 0 0 20px var(--violetti-hehku);    
+}
+
+.kauppa .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
